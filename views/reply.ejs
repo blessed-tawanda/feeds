@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Feeds Reply</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-200">
+    <nav class="flex flex-row-reverse bg-purple-700">
+      <span class="text-white text-bold p-2 hover:bg-purple-600 animate cursor-pointer">
+        <a href="/logout"> Log Out</a>
+      </span>
+      <span class="text-white text-bold p-2 hover:bg-purple-600 animate cursor-pointer">
+          <a href="/"> Feeds </a>
+        </span>
+      <span class="text-white text-bold p-2 hover:bg-purple-600 animate cursor-pointer">
+        <a href="/settings"> Settings </a>
+      </span>
+    </nav>
+    <h1 class="text-center mt-2 text-3xl">Give Your Thought</h1>
+    <div class="border bg-white mb-2 w-1/2 m-auto">
+      <div class="p-2">
+        <p class="p-2 bg-gray-100 mb-1">
+          <%=postReply.post%> 
+        </p>
+        <div class="mt-2">
+          <span class="py-1 px-2 bg-indigo-100 rounded-full"><%=postReply.upvotes%> Up Votes</span>
+          <span class="py-1 px-2 bg-indigo-100 rounded-full"><%=postReply.downvotes%> Down Votes</span>
+          <span class="py-1 px-2 bg-indigo-100 rounded-full"><%=postReply.comment.length%> Thought(s)</span>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2 m-auto w-1/2 border bg-white p-2">
+      <form class="form" method="POST" action="/replypost/<%=postReply._id%>">
+        <textarea class="border w-full p-4 rounded" style="resize: none" name="post"></textarea>
+        <div class="flex flex-row-reverse mt-1">
+            <button class="w-auto px-4 py-2 rounded-full border-purple-700 bg-purple-700 hover:bg-purple-800 animate text-bold text-white" type="submit">Post</button>
+          </div>
+      </form>
+    </div>
+  </body>
+</html>

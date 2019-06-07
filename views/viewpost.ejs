@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>View Post</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-200">
+    <nav class="flex flex-row-reverse bg-purple-700">
+        <span class="text-white text-bold p-2 hover:bg-purple-600 animate cursor-pointer">
+          <a href="/logout"> Log Out</a>
+        </span>
+        <span class="text-white text-bold p-2 hover:bg-purple-600 animate cursor-pointer">
+            <a href="/"> Feeds </a>
+          </span>
+        <span class="text-white text-bold p-2 hover:bg-purple-600 animate cursor-pointer">
+          <a href="/settings"> Settings </a>
+        </span>
+    </nav>
+    <h1 class="text-center mt-2 text-3xl">Feed</h1>
+    <div class="border bg-white mb-2 w-1/2 m-auto">
+        <div class="p-2">
+          <p class="p-2 bg-gray-100 mb-1">
+            <%=post.post%> 
+          </p>
+          <div class="mt-2">
+            <span class="py-1 px-2 bg-indigo-100 rounded-full"><%=post.upvotes%> Up Votes</span>
+            <span class="py-1 px-2 bg-indigo-100 rounded-full"><%=post.downvotes%> Down Votes</span>
+          <a 
+            href="/reply/<%=post._id%>" 
+            class="border-purple-700 py-1 px-2 border rounded-full hover:bg-purple-700 hover:text-white text-bold">
+            Your Thought
+          </a>
+        </div>
+        <h3 class="text-center mt-1 mb-1">
+            What People Think
+        </h3>
+        <% post.comment.forEach((comment) => { %>
+          <p class="p-2 bg-gray-100 mb-1">
+            <%=comment.text%>
+          </p>
+        <% }) %>
+         </div>
+      </div>
+  </body>
+</html>
