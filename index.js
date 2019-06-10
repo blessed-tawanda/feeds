@@ -74,6 +74,7 @@ app.get('/', redirectLogIn ,async (req,res) => {
   await Post.find({}).then((post) => {
     posts.push(...post)
   })
+  var posts = posts.reverse()
   res.render('index.ejs', {posts})
 })
 
