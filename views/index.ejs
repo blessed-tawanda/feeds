@@ -20,9 +20,9 @@
     </div>
     <div class="mt-2 m-auto md:w-1/2 w-full border bg-white p-2">
       <form class="form" method="POST" action="/post">
-        <textarea class="border w-full p-4 rounded" style="resize: none" name="post" id="" class="text-area"></textarea>
+        <textarea class="border w-full p-4 rounded md:text-base text-sm" style="resize: none" name="post" id="" class="text-area"></textarea>
         <div class="flex flex-row-reverse mt-1">
-          <button class="w-auto px-4 py-2 rounded-full border-purple-700 bg-purple-700 hover:bg-purple-800 animate text-bold text-white" type="submit">Post</button>
+          <button class="md:text-base text-sm w-auto px-4 py-2 rounded-full border-purple-700 bg-purple-700 hover:bg-purple-800 animate text-bold text-white" type="submit">Post</button>
         </div>
       </form>
     </div>
@@ -48,7 +48,7 @@
                   <span class="py-1 px-2 bg-indigo-100 rounded-full"><%=post.comment.length%> Thought(s)</span>
                 </div>
           </div>
-          <div class="bg-purple-500">
+          <div class="bg-purple-500 md:text-base text-sm">
             <a class="p-1 animate hover:bg-purple-400" href="/upvote/<%=post._id%>"> Up Vote</a>
             <a class="p-1 animate hover:bg-purple-400" href="/downvote/<%=post._id%>"> Down Vote</a>
             <a class="p-1 animate hover:bg-purple-400" href="/reply/<%=post._id%>"> Post a Reply </a>
