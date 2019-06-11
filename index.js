@@ -69,6 +69,10 @@ app.post('/register', async (req, res) => {
   res.render('welcome.ejs', {username})
 })
 
+app.use((req,res,next) => {
+  res.render('maintainaice.ejs')
+})
+
 app.get('/', redirectLogIn ,async (req,res) => {
   var posts = []
   await Post.find({}).then((post) => {
